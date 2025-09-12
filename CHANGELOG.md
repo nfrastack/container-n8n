@@ -1,3 +1,9 @@
+## 1.1.0pre 2025-09-11 <code at nfrastack dot com>
+
+   ### Added
+      - Switched base image to nfrastack/container-nginx
+      - Alpine 3.22
+
 ## 1.0.999 2025-09-11 <dave at tiredofit dot ca>
 
 Added EOL Notice

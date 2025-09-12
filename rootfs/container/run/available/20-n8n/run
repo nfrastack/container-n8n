@@ -1,6 +1,9 @@
 #!/command/with-contenv bash
+# SPDX-FileCopyrightText: © 2024 Dave Conroy <dave@tiredofit.ca>
+#
+# SPDX-License-Identifier: MIT
 
-source /assets/functions/00-container
+source /container/base/functions/container/init
 
 SERVICE_NAME="n8n"
 
@@ -10,4 +13,5 @@ check_service_initialized init
 liftoff
 
 print_start "Starting n8n ${N8N_VERSION}"
+cd /app
 exec n8n start

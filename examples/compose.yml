@@ -1,16 +1,12 @@
-version: '2.4'
 services:
   
   n8n-app:
-    image: tiredofit/n8n:latest
+    image: nfrastack/n8n:latest
     container_name: n8n-app
     labels:
       - traefik.enable=true
-      - traefik.frontend.rule=Host:n8n.example.com
-      - traefik.port=80
-      - traefik.protocol=http
-      - traefik.docker.network=proxy
-      - traefik.backend=n8n-app
+      - traefik.http.routers.z2m.rule=Host(`z2m.example.com`)
+      - traefik.http.services.z2m.loadbalancer.server.port=80
     environment:
       - CONTAINER_NAME=n8n-app
 
@@ -21,12 +17,13 @@ services:
       - GENERIC_TIMEZONE=America/Vancouver
       - WEBHOOK_TUNNEL_URL=https://n8n.example.com/
       - VUE_APP_URL_BASE_API=https://n8n.example.com/
+
+      - ENABLE_NGINX=FALSE
     
       - N8N_PROTOCOL=https
       - N8N_HOST=n8n.example.com
       - N8N_PORT=80
       
-      - DEBUG_MODE=FALSE
 
     networks:
       - proxy
