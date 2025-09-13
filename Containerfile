@@ -28,8 +28,9 @@ COPY README.md /usr/src/container/README.md
 ENV \
     CONTAINER_ENABLE_MESSAGING=FALSE \
     NGINX_SITE_ENABLED=n8n \
-    NGINX_WEBROOT=/app \
     NGINX_ENABLE_CREATE_SAMPLE_HTML=FALSE \
+    NGINX_WEBROOT=/app \
+    NGINX_WORKER_PROCESSES=1 \
     IMAGE_NAME="tiredofit/n8n" \
     IMAGE_REPO_URL="https://github.com/tiredofit/docker-n8n/"
 
