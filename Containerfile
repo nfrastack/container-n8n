@@ -2,9 +2,8 @@
 #
 # SPDX-License-Identifier: MIT
 
-ARG BASE_IMAGE
-ARG DISTRO
-ARG DISTRO_VARIANT
+ARG \
+    BASE_IMAGE
 
 FROM ${BASE_IMAGE}:${DISTRO}_${DISTRO_VARIANT}
 
@@ -19,7 +18,7 @@ LABEL \
         org.opencontainers.image.licenses="MIT"
 
 ARG \
-    N8N_VERSION=1.110.1
+    N8N_VERSION=1.115.0
 
 COPY CHANGELOG.md /usr/src/container/CHANGELOG.md
 COPY LICENSE /usr/src/container/LICENSE

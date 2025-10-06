@@ -56,7 +56,7 @@ Example:
 `ghcr.io/nfrastack/container-n8n:alpine`
 
 * `latest` will be the most recent commit
-* An otpional `tag` may exist that matches the [CHANGELOG](CHANGELOG.md) - These are the safest
+* An optional `tag` may exist that matches the [CHANGELOG](CHANGELOG.md) - These are the safest
 * If it is built for multiple distributions there may exist a value of `alpine` or `debian`
 * If there are multiple distribution variations it may include a version - see the registry for availability
 
