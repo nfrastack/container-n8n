@@ -5,8 +5,7 @@
 ARG \
     BASE_IMAGE
 
-FROM ${BASE_IMAGE}:${DISTRO}_${DISTRO_VARIANT}
-
+FROM ${BASE_IMAGE}
 LABEL \
         org.opencontainers.image.title="N8N_BUILD_DEPS" \
         org.opencontainers.image.description="Workflow Automation platform" \
