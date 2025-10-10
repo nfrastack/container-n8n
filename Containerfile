@@ -7,7 +7,7 @@ ARG \
 
 FROM ${BASE_IMAGE}
 LABEL \
-        org.opencontainers.image.title="N8N_BUILD_DEPS" \
+        org.opencontainers.image.title="n8n" \
         org.opencontainers.image.description="Workflow Automation platform" \
         org.opencontainers.image.url="https://hub.docker.com/r/nfrastack/n8n" \
         org.opencontainers.image.documentation="https://github.com/nfrastack/container-n8n/blob/main/README.md" \
@@ -17,7 +17,7 @@ LABEL \
         org.opencontainers.image.licenses="MIT"
 
 ARG \
-    N8N_VERSION=1.115.1
+    N8N_VERSION=1.115.2
 
 COPY CHANGELOG.md /usr/src/container/CHANGELOG.md
 COPY LICENSE /usr/src/container/LICENSE
