@@ -17,7 +17,7 @@ LABEL \
         org.opencontainers.image.licenses="MIT"
 
 ARG \
-    N8N_VERSION=1.115.2
+    N8N_VERSION=1.116.0
 
 COPY CHANGELOG.md /usr/src/container/CHANGELOG.md
 COPY LICENSE /usr/src/container/LICENSE
@@ -29,8 +29,8 @@ ENV \
     NGINX_ENABLE_CREATE_SAMPLE_HTML=FALSE \
     NGINX_WEBROOT=/app \
     NGINX_WORKER_PROCESSES=1 \
-    IMAGE_NAME="tiredofit/n8n" \
-    IMAGE_REPO_URL="https://github.com/tiredofit/docker-n8n/"
+    IMAGE_NAME="container/n8n" \
+    IMAGE_REPO_URL="https://github.com/nfrastack/container-n8n/"
 
 RUN echo "" && \
     N8N_BUILD_DEPS_ALPINE=" \

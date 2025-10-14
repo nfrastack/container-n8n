@@ -1,14 +1,14 @@
 services:
-  
+
   n8n-app:
-    image: nfrastack/n8n:latest
+    image: docker.io/nfrastack/n8n:latest
     container_name: n8n-app
     labels:
       - traefik.enable=true
-      - traefik.http.routers.z2m.rule=Host(`z2m.example.com`)
-      - traefik.http.services.z2m.loadbalancer.server.port=80
+      - traefik.http.routers.n8n.rule=Host(`n8n.example.com`)
+      - traefik.http.services.n8n.loadbalancer.server.port=80
     environment:
-      - CONTAINER_NAME=n8n-app
+      - TIMEZONE=America/Vancouver
 
       - N8N_BASIC_AUTH_ACTIVE=true
       - N8N_BASIC_AUTH_USER=admin
@@ -19,19 +19,14 @@ services:
       - VUE_APP_URL_BASE_API=https://n8n.example.com/
 
       - ENABLE_NGINX=FALSE
-    
+
       - N8N_PROTOCOL=https
       - N8N_HOST=n8n.example.com
       - N8N_PORT=80
-      
-
     networks:
       - proxy
-      - services
     restart: always
 
 networks:
   proxy:
-    external: true
-  services:
     external: true
