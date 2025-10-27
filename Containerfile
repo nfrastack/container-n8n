@@ -17,7 +17,7 @@ LABEL \
         org.opencontainers.image.licenses="MIT"
 
 ARG \
-    N8N_VERSION=1.117.1
+    N8N_VERSION=1.118.0
 
 COPY CHANGELOG.md /usr/src/container/CHANGELOG.md
 COPY LICENSE /usr/src/container/LICENSE
