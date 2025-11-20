@@ -1,7 +1,7 @@
 ## 1.1.0pre 2025-09-11 <code at nfrastack dot com>
 
    ### Added
-      - n8n 1.121.1
+      - n8n 1.121.2
       - Switched base image to nfrastack/container-nginx
       - Alpine 3.22
 
