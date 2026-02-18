@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: © 2025 Nfrastack <code@nfrastack.com>
+# SPDX-FileCopyrightText: © 2026 Nfrastack <code@nfrastack.com>
 #
 # SPDX-License-Identifier: MIT
 
@@ -17,7 +17,7 @@ LABEL \
         org.opencontainers.image.licenses="MIT"
 
 ARG \
-    N8N_VERSION=2.8.2
+    N8N_VERSION=2.9.1
 
 COPY CHANGELOG.md /usr/src/container/CHANGELOG.md
 COPY LICENSE /usr/src/container/LICENSE
@@ -25,10 +25,10 @@ COPY README.md /usr/src/container/README.md
 
 ENV \
     CONTAINER_ENABLE_MESSAGING=FALSE \
+    ENABLE_NGINX=FALSE \
     NGINX_SITE_ENABLED=n8n \
-    NGINX_ENABLE_CREATE_SAMPLE_HTML=FALSE \
-    NGINX_WEBROOT=/app \
-    NGINX_WORKER_PROCESSES=1 \
+    NGINX_MODE="proxy" \
+    NGINX_PROXY_URL="http://localhost:[env:LISTEN_PORT]" \
     IMAGE_NAME="container/n8n" \
     IMAGE_REPO_URL="https://github.com/nfrastack/container-n8n/"
 
@@ -70,7 +70,5 @@ RUN echo "" && \
     package cleanup
 
 WORKDIR /app/
-
-EXPOSE 5678
 
 COPY rootfs /

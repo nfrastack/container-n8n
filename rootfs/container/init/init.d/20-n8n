@@ -1,15 +1,10 @@
 #!/command/with-contenv bash
-# SPDX-FileCopyrightText: © 2025 Nfrastack <code@nfrastack.com>
+# SPDX-FileCopyrightText: © 2026 Nfrastack <code@nfrastack.com>
 #
 # SPDX-License-Identifier: MIT
 
 source /container/base/functions/container/init
 prepare_service 20-n8n
 SERVICE_NAME="n8n"
-
-if var_false "${ENABLE_NGINX}" ; then
-	print_warn "Disabling Nginx - Using N8N in place server - Be sure to set Authentication!"
-	service_stop 10-nginx
-fi
 
 liftoff
