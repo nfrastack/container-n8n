@@ -105,8 +105,8 @@ Below is the complete list of available options that can be used to customize yo
 
 | Type  | Name  | ID   |
 | ----- | ----- | ---- |
-| User  | `n8n` | 2323 |
-| Group | `n8n` | 2323 |
+| User  | `n8n` | 5678 |
+| Group | `n8n` | 5678 |
 
 ### Networking
 

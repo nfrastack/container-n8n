@@ -24,15 +24,17 @@ COPY LICENSE /usr/src/container/LICENSE
 COPY README.md /usr/src/container/README.md
 
 ENV \
-    CONTAINER_ENABLE_MESSAGING=FALSE \
-    ENABLE_NGINX=FALSE \
-    NGINX_SITE_ENABLED=n8n \
-    NGINX_MODE="proxy" \
-    NGINX_PROXY_URL="http://localhost:[env:LISTEN_PORT]" \
     IMAGE_NAME="container/n8n" \
     IMAGE_REPO_URL="https://github.com/nfrastack/container-n8n/"
 
 RUN echo "" && \
+    BUILD_ENV=" \
+                 10-nginx/ENABLE_NGINX=FALSE \
+                 10-nginx/NGINX_SITE_ENABLED=n8n \
+                 10-nginx/NGINX_MODE=proxy \
+                 10-nginx/NGINX_PROXY_URL=http://localhost:[env:N8N_PORT] \
+              " \
+              && \
     N8N_BUILD_DEPS_ALPINE=" \
                             build-base \
                             python3 \
@@ -58,10 +60,10 @@ RUN echo "" && \
                         && \
     \
     mkdir -p /app && \
-    npm_config_user=root npm install -g \
-                                        n8n@${N8N_VERSION} \
-                                        typescript \
-                                        && \
+    npm install -g \
+                    n8n@${N8N_VERSION} \
+                    typescript \
+                    && \
     \
     container_build_log add "n8n" "${N8N_VERSION}" "npm" && \
     package remove \

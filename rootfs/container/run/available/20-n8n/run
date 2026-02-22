@@ -9,7 +9,6 @@ SERVICE_NAME="n8n"
 
 check_container_initialized
 check_service_initialized init
-
 liftoff
 
 print_start "Starting n8n ${N8N_VERSION}"
