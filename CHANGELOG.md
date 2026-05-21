@@ -1,3 +1,9 @@
+## 1.1.2 2026-05-21 <code at nfrastack dot com>
+
+   ### Added
+      - n8n 2.21.6
+
+
 ## 1.1.1 2026-04-14 <code at nfastack dot com>
 
    ### Added
